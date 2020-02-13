@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TrackPack</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<style>
+  body {
+    background-image: url('static/trans_bg.webp');
+  }
+  div{
+    width: 20%; background-color: rgba(222, 220, 220, 0.3);
+  }
+  h1{
+    font-size: 700%; margin-top: 35px; color:rgb(39, 47, 65); opacity:1;
+  }
+  table{
+    margin-top: 45px; 
+  }
+  div.btn{
+    margin-left: 661px;
+  }
+  p{
+    background-color: white;
+    text-align: center;
+  }
+</style>
+
+<body >
+  <div></div>
+  <center><div><h1>trEcho</h1></div></center>
+<script>
+var row1Arrive = "5hrs";
+  var row2Arrive = "2hrs";
+  var row3Arrive = "13hrs";
+  var row4Arrive = "2hrs";
+  var row5Arrive = "6hrs";
+  
+  var row1Info = "Your Package from Vancouver is currently at 59 Hickory Street, Waterloo, ON N2K 0E1, Canada. Your package will arrive on February 09 2020 at 2:33 pm.";
+  var row2Info = "Your Package from Toronto is currently at 59 Rouse Rd, Wiarton, ON N0H 2T0, Canada. Your package will arrive on February 09 2020 at 16:12 pm.";
+  var row3Info = "Your Package from Vancouver is currently at 1442 Orange Street, Kingston, ON N2W 4H2, Canada. Your package will arrive on February 09 2020 at 12:07 pm.";
+  var row4Info = "Your Package from Calgary is currently at 23 Cahill Street, Ajax, ON N2G 7E8, Canada. Your package will arrive on February 09 2020 at 5:51 pm.";
+  var row5Info = "Your Package from Tel Aviv is currently at 2 Robertson Road, Ottawa, ON K2G 8J3, Canada. Your package will arrive on February 09 2020 at 11:54 am.";
+
+   
+  </script>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Item #</th>
+        <th scope="col">Description</th>
+        <th scope="col">Last location</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Last request</th>
+        <th scope="col">Time until Arrival</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Apple MacBook Pro 2019</td>
+        <td> <input value="Calgary"> </td>
+        <td>Ottawa</td>
+        <td> <input value="8.141"></td>
+        <td id="row1Arrive">text</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Alexo Echo Dot</td>
+        <td> <input value="North Bay"> </td>
+        <td>Ottawa</td>
+        <td> <input value="4.052"></td>
+        <td id="row2Arrive">text</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Adidas Shoes</td>
+        <td> <input value="Kitchener"> </td>
+        <td>Ottawa</td>
+        <td> <input value="1.229"></td>
+        <td id="row3Arrive">text</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>Fossil Watch</td>
+        <td> <input value="Burnaby"> </td>
+        <td>Ottawa</td>
+        <td> <input value="0.492"></td>
+        <td id="row4Arrive">text</td>
+      </tr>
+      <tr>
+        <th scope="row">5</th>
+        <td>Wedding Ring</td>
+        <td> <input value="Victoria"> </td>
+        <td>Ottawa</td>
+        <td> <input value="8.327"></td>
+        <td id="row5Arrive">text</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div id="test" class="btn"><button onclick="      axios.get('/predict-package', {
+    'key': {
+      'key':{
+      'description': 'Wedding Ring',
+      'origin': [52.107335, -106.672121], 
+      'destination': [48.418341, -123.340524], 
+      'last_request': [8, 2, 2020, 13, 1], 
+      'last_location': [50.261236, -119.280077] }
+  }
+})">Click for Results</button></div>
+
+        <p id="row1Info">text</p>
+        <p id="row2Info">text</p>
+        <p id="row3Info">text</p>
+        <p id="row4Info">text</p>
+        <p id="row5Info">text</p>
+
+  <script>
+    document.getElementById("row1Arrive").innerHTML = row1Arrive; 
+    document.getElementById("row2Arrive").innerHTML = row2Arrive; 
+    document.getElementById("row3Arrive").innerHTML = row3Arrive; 
+    document.getElementById("row4Arrive").innerHTML = row4Arrive; 
+    document.getElementById("row5Arrive").innerHTML = row5Arrive;
+    document.getElementById("row1Info").innerHTML = row1Info; 
+    document.getElementById("row2Info").innerHTML = row2Info; 
+    document.getElementById("row3Info").innerHTML = row3Info; 
+    document.getElementById("row4Info").innerHTML = row4Info; 
+    document.getElementById("row5Info").innerHTML = row5Info;
+    </script>
+
+
+
+  <script>
+    function myFunction(){
+      axios.post('/predict_package', {
+        "key": {
+          "description": "Wedding Ring",
+          "origin": [52.107335, -106.672121], 
+          "destination": [48.418341, -123.340524], 
+          "last_request": [8, 2, 2020, 13, 1], 
+          "last_location": [50.261236, -119.280077] 
+      }
+    })
+.then(function (response) {
+  console.log(response);
+})
+.catch(function (error) {
+  console.log(error);
+});
+      document.getElementById("row1Arrive").innerHTML = {{update}}; 
+    }
+</script>
+
+
+</body >
+</html>
